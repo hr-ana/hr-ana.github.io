@@ -216,7 +216,16 @@
         border-radius: var(--radius-lg);
         padding: 28px;
       }
-
+      .profile-image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+      }
       .card-title {
         margin-top: 12px;
         font-size: 30px;
@@ -488,8 +497,15 @@
 
           <aside class="hero-card">
             <div class="hero-card-inner">
-              <p class="eyebrow">Core focus</p>
+              <img
+                src="ana.png"
+                alt="Ana Radu"
+                class="profile-image"
+              />
+
+              <p class="eyebrow" style="margin-top: 22px;">Core focus</p>
               <p class="card-title">Tech recruitment with clarity, quality, and fit</p>
+
               <div class="chip-wrap">
                 <span class="chip">Software Engineering</span>
                 <span class="chip">Product</span>
