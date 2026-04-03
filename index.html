@@ -14,19 +14,20 @@
       content="Thoughtful hiring for ambitious tech teams."
     />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#0B0F14" />
     <style>
       :root {
-        --bg: #0a0a0a;
-        --bg-soft: rgba(255, 255, 255, 0.03);
-        --card: #121212;
-        --line: rgba(255, 255, 255, 0.1);
-        --text: #f5f5f5;
-        --muted: #c9c9c9;
-        --muted-2: #8d8d8d;
-        --accent: #f472b6;
-        --accent-soft: rgba(244, 114, 182, 0.14);
-        --white-soft: rgba(255, 255, 255, 0.08);
+        --bg: #0b0f14;
+        --bg-2: #0d1218;
+        --bg-soft: rgba(255, 248, 240, 0.028);
+        --card: #11161d;
+        --line: rgba(212, 183, 122, 0.16);
+        --text: #f7f3ed;
+        --muted: #d8cec1;
+        --muted-2: #9d9488;
+        --accent: #d4b77a;
+        --accent-2: #c6a86b;
+        --accent-cool: #668497;
         --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
         --radius-xl: 32px;
         --radius-lg: 24px;
@@ -45,11 +46,11 @@
       body {
         margin: 0;
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background:
-          radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 28%),
-          radial-gradient(circle at bottom left, rgba(244, 114, 182, 0.14), transparent 30%),
-          var(--bg);
         color: var(--text);
+        background:
+          radial-gradient(circle at top right, rgba(212, 183, 122, 0.1), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(102, 132, 151, 0.14), transparent 34%),
+          linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       }
 
       a {
@@ -57,9 +58,17 @@
         text-decoration: none;
       }
 
+      h1, h2, h3, h4, p {
+        margin: 0;
+      }
+
       .container {
         width: min(calc(100% - 48px), var(--max));
         margin: 0 auto;
+      }
+
+      .hero {
+        border-bottom: 1px solid var(--line);
       }
 
       .section {
@@ -70,10 +79,6 @@
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
         background: var(--bg-soft);
-      }
-
-      .hero {
-        border-bottom: 1px solid var(--line);
       }
 
       .header {
@@ -93,9 +98,10 @@
       }
 
       .brand-name {
-        margin: 10px 0 0;
+        margin-top: 10px;
         font-size: 28px;
         font-weight: 600;
+        color: #ffffff;
       }
 
       .nav {
@@ -105,10 +111,8 @@
         font-size: 14px;
       }
 
-      .nav a:hover,
-      .button-secondary:hover,
-      .button-link:hover {
-        color: #fff;
+      .nav a:hover {
+        color: #ffffff;
       }
 
       .hero-grid {
@@ -123,19 +127,11 @@
         display: inline-flex;
         align-items: center;
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 248, 240, 0.05);
         color: var(--muted);
         border-radius: 999px;
         padding: 9px 14px;
         font-size: 14px;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      p {
-        margin: 0;
       }
 
       .hero-title {
@@ -184,24 +180,31 @@
       }
 
       .button {
-        background: #fff;
-        color: #111;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        color: #11161d;
+        box-shadow: 0 10px 28px rgba(212, 183, 122, 0.18);
       }
 
       .button:hover {
-        opacity: 0.9;
+        opacity: 0.92;
       }
 
       .button-secondary,
       .button-link {
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(212, 183, 122, 0.18);
+        background: rgba(255, 248, 240, 0.04);
         color: var(--text);
+      }
+
+      .button-secondary:hover,
+      .button-link:hover {
+        border-color: rgba(212, 183, 122, 0.28);
+        background: rgba(255, 248, 240, 0.06);
       }
 
       .hero-card {
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
+        background: linear-gradient(180deg, rgba(255, 248, 240, 0.05), rgba(255, 248, 240, 0.025));
         border-radius: var(--radius-xl);
         padding: 24px;
         box-shadow: var(--shadow);
@@ -242,10 +245,10 @@
 
       .chip,
       .tag {
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(212, 183, 122, 0.18);
+        background: rgba(255, 248, 240, 0.045);
         border-radius: 999px;
-        color: #e5e5e5;
+        color: #efe6da;
       }
 
       .chip {
@@ -305,7 +308,7 @@
 
       .area-item {
         padding: 18px 20px;
-        background: rgba(18, 18, 18, 0.75);
+        background: linear-gradient(180deg, rgba(17, 22, 29, 0.92), rgba(13, 18, 24, 0.92));
         font-size: 15px;
         font-weight: 600;
         color: #e5e5e5;
@@ -313,7 +316,7 @@
 
       .card {
         padding: 26px;
-        background: rgba(255, 255, 255, 0.03);
+        background: linear-gradient(180deg, rgba(255, 248, 240, 0.035), rgba(255, 248, 240, 0.02));
         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
       }
 
@@ -341,7 +344,7 @@
       .value-item {
         border-radius: 18px;
         padding: 18px;
-        background: rgba(18, 18, 18, 0.75);
+        background: linear-gradient(180deg, rgba(17, 22, 29, 0.95), rgba(13, 18, 24, 0.95));
       }
 
       .value-item strong {
@@ -366,7 +369,7 @@
       }
 
       .contact-panel {
-        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+        background: linear-gradient(to bottom right, rgba(212, 183, 122, 0.08), rgba(102, 132, 151, 0.06));
         padding: 34px;
       }
 
@@ -384,9 +387,10 @@
       }
 
       .contact-mail {
-        background: var(--accent);
-        color: #111;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        color: #11161d;
         border: none;
+        box-shadow: 0 10px 28px rgba(212, 183, 122, 0.18);
       }
 
       .footer {
@@ -479,9 +483,17 @@
               <a
                 class="button"
                 href="mailto:ana@anemonautas.eu?subject=Need%20talent&body=Hi%20Ana%2C%20I%20found%20you%20through%20Github%2C%20and%20I%20may%20need%20you%20because..."
-                >Contact Ana</a
               >
-              <a class="button-secondary" href="https://linkedin.com/in/ana-radu1493" target="_blank" rel="noreferrer">LinkedIn</a>
+                Contact Ana
+              </a>
+              <a
+                class="button-secondary"
+                href="https://linkedin.com/in/ana-radu1493"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
 
@@ -620,11 +632,17 @@
               <a
                 class="button contact-mail"
                 href="mailto:ana@anemonautas.eu?subject=Need%20talent&body=Hi%20Ana%2C%20I%20found%20you%20through%20Github%2C%20and%20I%20may%20need%20you%20because..."
-                >ana@anemonautas.eu</a
               >
-              <a class="button-link" href="https://linkedin.com/in/ana-radu1493" target="_blank" rel="noreferrer"
-                >linkedin.com/in/ana-radu1493</a
+                ana@anemonautas.eu
+              </a>
+              <a
+                class="button-link"
+                href="https://linkedin.com/in/ana-radu1493"
+                target="_blank"
+                rel="noreferrer"
               >
+                linkedin.com/in/ana-radu1493
+              </a>
             </div>
           </div>
         </div>
